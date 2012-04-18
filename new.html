@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Raven Web Studio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <style type="text/css">
+      body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+      }
+      .sidebar-nav {
+        padding: 9px 0;
+      }
+		#connect-button {
+			margin-right: 7px;
+		}
+    </style>
+    <link href="css/bootstrap-responsive.css" rel="stylesheet">
+
+    <!-- Le fav and touch icons -->
+    <!--<link rel="shortcut icon" href="../assets/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">-->
+  </head>
+
+  <body>
+
+	<div class="navbar navbar-fixed-top">
+		<div class="navbar-inner">
+			<div class="container-fluid">
+				<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</a>
+				<a class="brand" href="#">Raven Web Studio</a>
+				<div class="nav-collapse">
+					<ul class="nav pull-right">
+			            <li class="dropdown">
+			              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Settings <b class="caret"></b></a>
+			              <ul class="dropdown-menu">
+			                <li><a href="#appearance-modal" data-toggle="modal">Appearance</a></li>
+			                <li><a href="#options-modal" data-toggle="modal">Options</a></li>
+			              </ul>
+			            </li>
+			            <li class="dropdown">
+			              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Help <b class="caret"></b></a>
+			              <ul class="dropdown-menu">
+			                <li><a href="#">Github</a></li>
+			                <li><a href="#about-modal" data-toggle="modal">About Raven Web Studio</a></li>
+			              </ul>
+			            </li>
+			          </ul>
+				</div><!--/.nav-collapse -->
+			</div>
+		</div>
+	</div>
+
+    <div class="container-fluid">
+
+		<div class="row-fluid">
+			<div class="span12 tabbable">
+				<ul class="nav nav-tabs" id="database-tabs">
+					<li><button class="btn btn-primary" href="#connect-modal" id="connect-button" data-toggle="modal">Connect</button></li>
+					<li class="active"><a href="#home" data-toggle="tab">Home</a></li>
+					<li><a href="#bowerbird_dev" data-toggle="tab">bowerbird_dev</a></li>
+				</ul>
+				<div class="tab-content">
+					<div class="tab-pane active" id="home">
+						<div class="row-fluid">
+							<div class="span12">
+								<div class="hero-unit">
+									<h1>Hello, world!</h1>
+									<p>This is a template for a simple marketing or informational website. It includes a large callout called the hero unit and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
+									<p><a class="btn btn-primary btn-large">Learn more &raquo;</a></p>
+								</div>
+							</div>
+						</div>
+					</div>
+			  		<div class="tab-pane" id="bowerbird_dev">
+						<div class="row-fluid">
+		        			<div class="span3">
+		          				<div class="well sidebar-nav">
+		            				<ul class="nav nav-list">
+										<li class="nav-header">Database</li>
+										<li class="active"><a href="#"><i class="icon-white icon-home"></i> Summary</a></li>
+										<li><a href="#collections"><i class="icon-list-alt"></i> Collections</a></li>
+										<li><a href="#index-definitions"><i class="icon-book"></i> Indexes</a></li>
+										<li><a href="#documents"><i class="icon-file"></i> Documents</a></li>
+										<li class="nav-header">Administration</li>
+										<li><a href="#"><i class="icon-upload"></i> Tasks</a></li>
+										<li><a href="#"><i class="icon-pencil"></i> Logs</a></li>
+										<li class="divider"></li>
+										<li>
+											<button type="button" class="btn btn-mini btn-primary"><i class="icon-cog icon-white"></i> Settings</button>
+											<button type="button" class="btn btn-mini btn-warning"><i class="icon-trash icon-white"></i> Disconnect</a>
+										</li>
+									</ul>
+		          				</div><!--/.well -->
+		        			</div><!--/span-->
+							<div class="span9" id="index-definition-list">
+							</div>
+			    		</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+    <hr>
+
+    <footer>
+    	<p>&copy; Company 2012</p>
+    </footer>
+
+    </div><!--/.fluid-container-->
+
+	<div class="modal hide" id="about-modal">
+	  <div class="modal-header">
+	    <a class="close" data-dismiss="modal">×</a>
+	    <h3>About Raven Web Studio</h3>
+	  </div>
+	  <div class="modal-body">
+	    <p>Designed and developed by Frank Radocaj:</p>
+		<ul>
+			<li><a href="http://radocaj.com/">Radocaj.com</a></li>
+			<li><a href="http://twitter.com/frankr">Twitter</a></li>
+		</ul>
+	  </div>
+	  <div class="modal-footer">
+	    <a href="#" class="btn" data-dismiss="modal">Close</a>
+	  </div>
+	</div>
+	
+	<div class="modal hide" id="options-modal">
+	  <div class="modal-header">
+	    <a class="close" data-dismiss="modal">×</a>
+	    <h3>Options</h3>
+	  </div>
+	  <div class="modal-body">
+	    <p>Change options here:</p>
+	  </div>
+	  <div class="modal-footer">
+	    <a href="#" class="btn" data-dismiss="modal">Close</a>
+	 	<a href="#" class="btn btn-primary">Save changes</a>
+	  </div>
+	</div>
+	
+	<div class="modal hide" id="connect-modal">
+	  <div class="modal-header">
+	    <a class="close" data-dismiss="modal">×</a>
+	    <h3>Connect</h3>
+	  </div>
+	  <div class="modal-body">
+		<form class="form-horizontal">
+
+		    <div class="control-group">
+		      <label class="control-label" for="input01">Document Store</label>
+		      <div class="controls">
+				<div class="input-prepend">
+				                <span class="add-on">http://</span><input class="span3" id="prependedInput" type="text">
+				              </div>
+		        <p class="help-block">The datastore must be accessible via your browser, which means firewalls, proxies etc are correctly configured.</p>
+		      </div>
+		    </div>
+		
+		    <div class="control-group">
+		      <label class="control-label" for="input01">Database Name</label>
+		      <div class="controls">
+		        <input type="text" class="span3" id="input01">
+		      </div>
+		    </div>
+
+		</form>
+	  </div>
+	  <div class="modal-footer">
+	    <a href="#" class="btn" data-dismiss="modal">Close</a>
+	 	<a href="#" class="btn btn-primary">OK</a>
+	  </div>
+	</div>
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+	<script src="js/libs/jquery-1.7.1.js"></script>
+	<script src="js/libs/underscore.js"></script>
+	<script src="js/libs/backbone.js"></script>
+	<script src="js/libs/mustache.js"></script>
+	<script src="js/libs/icanhaz.js"></script>
+	<script src="js/libs/bootstrap.js"></script>
+	<script src="js/plugins.js"></script>
+	<script src="js/script.js"></script>
+	<script id="indexSummaryTemplate" type="text/html">
+	    <p>Name: {{name}}</p>
+		{{#definition}}
+		<p>Temporary: {{IsTemp}}</p>
+		<p>Maps:</p>
+		{{#Maps}}
+			<p>{{.}}</p>
+		{{/Maps}}
+		{{/definition}}
+	</script>
+	
+  <!-- Asynchronous Google Analytics snippet. Change UA-XXXXX-X to be your site's ID.
+       mathiasbynens.be/notes/async-analytics-snippet -->
+  <!--<script>
+    var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+    g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+    s.parentNode.insertBefore(g,s)}(document,'script'));
+  </script>-->
+
+  </body>
+</html>
