@@ -102,7 +102,7 @@ window.RWS.App = Backbone.Model.extend({
 		var self = this;
 		$.ajax({
 		   type: 'GET',
-		   url:'http://136.154.202.119:8002/databases/bowerbird_dev/indexes',
+		   url:'http://localhost:8080/indexes',
 		   success: function(data, textStatus, XMLHttpRequest){
 				console.log(data);
 				self.indexDefinitions.add(data);
