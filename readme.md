@@ -1,55 +1,33 @@
-# [HTML5 Boilerplate](http://html5boilerplate.com)
+# CodeName (oYo) : An Html5 Raven Web Studio
 
-HTML5 Boilerplate is a professional front-end template that helps you build fast, robust, adaptable, and future-proof websites. Spend more time developing and less time reinventing the wheel.
+This project is an HTML5 'site' which allows a person to connect to a [Raven Database](http://ravendb.net/).
+It's an option for those people who don't really want to use the SilverLight Raven Db Studio Manager that comes provided with a stock standard Raven Db installation.
 
-This project is the product of many years of iterative development and combined community knowledge. It does not impose a specific development philosophy or framework, so you're free to architect your code in the way that you want.
+NOTE: Currently, only the list of Indexes has started to be implimented.
+
+## DISCLAIMER
+This is really important. This is really a Work In Progress. Hardly anything has been done right now, but it's just a kick start to getting to the final goal. Please help by Forking and sending in Pull Requests.
 
 
 ## Quick start
 
-Clone the git repo - `git clone git://github.com/h5bp/html5-boilerplate.git` - or [download it](https://github.com/h5bp/html5-boilerplate/zipball/master)
+Here's [a video that shows how to get started](http://www.youtube.com/watch?v=7DTPjo1CVE8) :)
+
+
+![PewPew!](http://i.imgur.com/CQY72.png)
 
 
 ## Features
 
 * HTML5 ready. Use the new elements with confidence.
-* Cross-browser compatible (Chrome, Opera, Safari, Firefox 3.6+, IE6+).
-* Designed with progressive enhancement in mind.
-* CSS normalizations and common bug fixes.
-* IE-specific classes for easier cross-browser control.
-* A default print stylesheet, performance optimized.
-* Mobile browser optimizations.
-* Protection against any stray `console.log` causing JavaScript errors in IE6/7.
-* The latest jQuery via CDN, with a local fallback.
-* A custom Modernizr build for feature detection.
-* An optimized Google Analytics snippet.
-* Apache server caching, compression, and other configuration defaults for Grade-A performance.
-* Cross-domain Ajax and Flash.
-* "Delete-key friendly." Easy to strip out parts you don't need.
-* Extensive inline and accompanying documentation.
-
+* [Backbone.js](http://documentcloud.github.com/backbone/)
+* [Twitter Bootstrap](http://twitter.github.com/bootstrap/)
+* [Mustache.js](http://mustache.github.com/)
+* [JQuery](http://jquery.com/)
 
 ## Contributing
 
-Anyone and everyone is welcome to [contribute](https://github.com/h5bp/html5-boilerplate/wiki/contribute). Hundreds of developers have helped make the HTML5 Boilerplate what it is today.
+Anyone and everyone is welcome to [contribute](https://github.com/frankradocaj/RavenWebStudio).
 
 
-## Project information
-
-* Source: http://github.com/h5bp/html5-boilerplate
-* Web: http://html5boilerplate.com
-* Docs: http://html5boilerplate.com/docs
-* Twitter: http://twitter.com/h5bp
-
-
-## License
-
-### Major components:
-
-* jQuery: MIT/GPL license
-* Modernizr: MIT/BSD license
-* Normalize.css: Public Domain
-
-### Everything else:
-
-The Unlicense (aka: public domain)
+![PewPew!](http://static.ravendb.net/badges/standard/badge1.png)
