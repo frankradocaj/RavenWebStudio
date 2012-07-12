@@ -181,6 +181,8 @@ a:hover {
 }
 .span8 {
   width: 620px;
+  color:'purple';
+  border-width: 1px;
 }
 .span7 {
   width: 540px;
@@ -193,6 +195,10 @@ a:hover {
 }
 .span4 {
   width: 300px;
+  border-width:thin;
+  border-style:dotted;
+  border-color:black;
+  background-color:#ebebeb;
 }
 .span3 {
   width: 220px;

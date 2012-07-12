@@ -218,6 +218,8 @@
   }
   .span8 {
     width: 476px;
+	color: 'purple';
+	border-width:1px;
   }
   .span7 {
     width: 414px;

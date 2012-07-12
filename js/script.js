@@ -54,14 +54,16 @@ window.RWS.Views.AppView = Backbone.View.extend({
 
 window.RWS.Views.IndexDefinitionView = Backbone.View.extend({
     tagName: 'li',
-
+	className: 'indexOverview',
     initialize: function (options) {
         _.extend(this, Backbone.Events);
         this._indexDefinition = options.indexDefinition;
     },
 
     render: function () {
-        this.$el.append(ich.indexSummaryTemplate(this._indexDefinition.toJSON()));
+        this.$el.append("<div class='icon-pencil' style='float:right'/>");
+		this.$el.append(ich.indexSummaryTemplate(this._indexDefinition.toJSON()));
+		
         return this;
     }
 });
