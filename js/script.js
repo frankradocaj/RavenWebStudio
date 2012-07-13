@@ -63,14 +63,13 @@ window.RWS.Views.AppView = Backbone.View.extend({
         $('#index-definition-list').append(indexDefinitionView.render().el);
     },
 	
-	/* HACKING  */
 	_addAllDocumentsView: function (allDocument){
 		console.log(allDocument);
 		var allDocumentsView = new RWS.Views.AllDocumentsView({ allDocument: allDocument });
 		this._allDocumentsView.push(allDocumentsView);
+		/* TODO: Create a new div for the 'all documents' view */
 		$('#index-definition-list').append(allDocumentsView.render().el);
 	}
-	/* HACKING  */
 });
 
 window.RWS.Views.IndexDefinitionView = Backbone.View.extend({
@@ -89,22 +88,20 @@ window.RWS.Views.IndexDefinitionView = Backbone.View.extend({
     }
 });
 
-/* HACKING  */
 window.RWS.Views.AllDocumentsView = Backbone.View.extend({
     tagName: 'li',
 	className: 'span7',
     initialize: function (options) {
         _.extend(this, Backbone.Events);
-        this._indexDefinition = options.allDocument;
+        this._document = options.allDocument;
     },
 
     render: function () {
         this.$el.append("<div class='icon-pencil' style='float:right'/>");
-		this.$el.append(ich.documentSummaryTemplate(this.options.allDocument.toJSON()));
+		this.$el.append(ich.documentSummaryTemplate(this._document.toJSON()));
         return this;
     }
 });
-/* HACKING  */
 
 /*
 App
@@ -167,7 +164,7 @@ window.RWS.App = Backbone.Model.extend({
             jsonp: 'jsonp', // “jsonp”, this is needed since jQuery defaults the name of the callback parameter to “callback”. Raven expects this to be “jsonp” hence the override is needed.
             url: 'http://localhost:8080/docs/',
             success: function (data, textStatus, jqXHR) {
-				
+				$('#index-definition-list').empty();
                 _.each(data, function (documents) {
                     app.allDocuments.add(documents);
                 });
