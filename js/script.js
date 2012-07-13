@@ -97,7 +97,7 @@ window.RWS.Views.AllDocumentsView = Backbone.View.extend({
     },
 
     render: function () {
-        this.$el.append("<div class='icon-pencil' style='float:right'/>");
+        this.$el.append("<div class='icon-pencil' style='float:right' title='click here to edit the document'/>");
 		this.$el.append(ich.documentSummaryTemplate(this._document.toJSON()));
         return this;
     }

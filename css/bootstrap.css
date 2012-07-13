@@ -1601,6 +1601,15 @@ table .span24 {
 .icon-pencil {
   background-position: 0 -72px;
 }
+.icon-pencil:hover{
+  background-position: 0 -72px;
+  opacity:0.5;
+  border-style:solid;
+  border-width:thin;
+  border-color:black;
+  border-spacing:10px 5px;
+  /*padding:5px 5px 5px 5px;*/
+}
 .icon-map-marker {
   background-position: -24px -72px;
 }
