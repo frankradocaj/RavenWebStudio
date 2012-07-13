@@ -54,7 +54,8 @@ window.RWS.Views.AppView = Backbone.View.extend({
 
 window.RWS.Views.IndexDefinitionView = Backbone.View.extend({
     tagName: 'li',
-	className: 'indexOverview',
+	/*className: 'indexOverview',*/
+	className: 'span7',
     initialize: function (options) {
         _.extend(this, Backbone.Events);
         this._indexDefinition = options.indexDefinition;
@@ -108,7 +109,7 @@ window.RWS.App = Backbone.Model.extend({
             type: 'GET',
             dataType: 'jsonp',
             jsonp: 'jsonp', // “jsonp”, this is needed since jQuery defaults the name of the callback parameter to “callback”. Raven expects this to be “jsonp” hence the override is needed.
-            url: 'http://localhost:8080/indexes',
+            url: 'http://localhost:8080/indexes/',
             success: function (data, textStatus, jqXHR) {
                 _.each(data, function (indexDefinition) {
                     app.indexDefinitions.add(indexDefinition);

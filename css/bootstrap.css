@@ -180,11 +180,16 @@ a:hover {
   width: 700px;
 }
 .span8 {
-  width: 620px;
-  color:'purple';
-  border-width: 1px;
+  width: 620px; 
 }
 .span7 {
+  border-style:solid;
+  border-width:thin;
+  border-color:black;
+  margin-bottom:10px;
+  padding:10px;
+  box-shadow: 5px 5px 7px #ebebeb;
+  list-style-type:none; 
   width: 540px;
 }
 .span6 {
