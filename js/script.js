@@ -103,9 +103,10 @@ window.RWS.Views.AllDocumentsView = Backbone.View.extend({
 		"click .icon-pencil": "showPencilClick",
 	},
 	showPencilClick: function(){
-		/* TODO: implement a toJSON function for the object and metadata */
-		var stringObject = JSON.stringify(this._document.toJSON());
-		var jsonObject = {"object": "raven object here", "metadata": "object metadata"};
+		var wholeObject = this._document.toJSON();
+		delete wholeObject['@metadata'];
+		var stringObject = JSON.stringify(wholeObject);
+		var jsonObject = {"object": stringObject, "metadata": wholeObject['@metadata']};
 		this.$el.html(ich.documentEditTemplate(jsonObject));
 	}
 });
