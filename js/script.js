@@ -90,6 +90,7 @@ window.RWS.Views.IndexDefinitionView = Backbone.View.extend({
 window.RWS.Views.AllDocumentsView = Backbone.View.extend({
     tagName: 'li',
 	className: 'span7',
+	
     initialize: function (options) {
         _.extend(this, Backbone.Events);
         this._document = options.allDocument;
@@ -97,7 +98,16 @@ window.RWS.Views.AllDocumentsView = Backbone.View.extend({
     render: function () {
 		this.$el.append(ich.documentSummaryTemplate(this._document.toJSON()));
         return this;
-    }
+    },
+	events: {
+		"click .icon-pencil": "showPencilClick",
+	},
+	showPencilClick: function(){
+		/* TODO: implement a toJSON function for the object and metadata */
+		var stringObject = JSON.stringify(this._document.toJSON());
+		var jsonObject = {"object": "raven object here", "metadata": "object metadata"};
+		this.$el.html(ich.documentEditTemplate(jsonObject));
+	}
 });
 
 /*
