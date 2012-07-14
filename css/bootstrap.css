@@ -1427,6 +1427,9 @@ table .span24 {
 .icon-search {
   background-position: -48px 0;
 }
+.icon-search:hover {
+  opacity: 0.5;
+}
 .icon-envelope {
   background-position: -72px 0;
 }
@@ -1602,13 +1605,7 @@ table .span24 {
   background-position: 0 -72px;
 }
 .icon-pencil:hover{
-  background-position: 0 -72px;
   opacity:0.5;
-  border-style:solid;
-  border-width:thin;
-  border-color:black;
-  border-spacing:10px 5px;
-  /*padding:5px 5px 5px 5px;*/
 }
 .icon-map-marker {
   background-position: -24px -72px;

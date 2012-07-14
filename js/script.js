@@ -81,7 +81,6 @@ window.RWS.Views.IndexDefinitionView = Backbone.View.extend({
     },
 
     render: function () {
-        this.$el.append("<div class='icon-pencil' style='float:right'/>");
 		this.$el.append(ich.indexSummaryTemplate(this._indexDefinition.toJSON()));
 		
         return this;
@@ -95,10 +94,7 @@ window.RWS.Views.AllDocumentsView = Backbone.View.extend({
         _.extend(this, Backbone.Events);
         this._document = options.allDocument;
     },
-	/*var id = this._document.attributes['@metadata']['@id'],
-	var collection = this._document.attributes['@metadata']['Raven-Entity-Name'],*/
     render: function () {
-        this.$el.append("<div class='icon-pencil' style='float:right' title='click here to edit the document'/>");
 		this.$el.append(ich.documentSummaryTemplate(this._document.toJSON()));
         return this;
     }

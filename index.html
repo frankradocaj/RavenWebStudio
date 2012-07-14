@@ -128,7 +128,9 @@
   <!-- end scripts -->
 
 <script id="indexSummaryTemplate" type="text/html">
-    <p>Name: {{name}}</p>
+    <div class='icon-search' style='float:right; padding-left:10px;'/>
+	<div class='icon-pencil' style='float:right; padding-left:10px;'/>
+	<p>Name: {{name}}</p>
 	{{#definition}}
 	<p>Temporary: {{IsTemp}}</p>
 	<p>Maps:</p>
@@ -140,6 +142,7 @@
 
 
 <script id="documentSummaryTemplate" type="text/html">
+	<div class='icon-pencil' style='float:right; padding-left:10px;' title='click here to edit the document'/>
 	{{#@metadata}}
 	<p>Id: {{@id}}</p>
 	<p>Type: {{Raven-Entity-Name}}</p>
