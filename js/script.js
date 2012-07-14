@@ -106,7 +106,7 @@ window.RWS.Views.AllDocumentsView = Backbone.View.extend({
 		var wholeObject = this._document.toJSON();
 		delete wholeObject['@metadata'];
 		var stringObject = JSON.stringify(wholeObject);
-		var jsonObject = {"object": stringObject, "metadata": wholeObject['@metadata']};
+		var jsonObject = {"object": stringObject, "metadata": this._document.toJSON()['@metadata']};
 		this.$el.html(ich.documentEditTemplate(jsonObject));
 	}
 });
