@@ -154,7 +154,12 @@
 	<h3>{{@id}}</h3>
 	{{/metadata}}
 	<form action="#">
-		<textarea rows="10" columns="4" name="document">{{object}}</textarea>
+		<label for="document">Document</label>
+		<!-- HACK: Hacking the width - not sure at this stage which css style to update -->
+		<textarea rows="10" columns="4" id="document" name="document" style="width:95%;">{{document}}</textarea>
+		<label for="metadata">Metadata</label>
+		<!-- HACK: Hacking the width - not sure at this stage which css style to update -->
+		<textarea rows="10" columns="4" id="metadata" name="metadata" style="width:95%;">{{metadata}}</textarea>
 		<br />
 		<button class="save">Save</button>
 		<button class="cancel">Cancel</button>

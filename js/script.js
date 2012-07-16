@@ -105,8 +105,9 @@ window.RWS.Views.AllDocumentsView = Backbone.View.extend({
 	showPencilClick: function(){
 		var wholeObject = this._document.toJSON();
 		delete wholeObject['@metadata'];
-		var stringObject = JSON.stringify(wholeObject);
-		var jsonObject = {"object": stringObject, "metadata": this._document.toJSON()['@metadata']};
+		var stringObject = JSON.stringify(wholeObject, null, "\t");
+		var metadata = JSON.stringify(this._document.toJSON()['@metadata'], null, "\t");
+		var jsonObject = {"document": stringObject, "metadata": metadata};
 		this.$el.html(ich.documentEditTemplate(jsonObject));
 	}
 });
