@@ -213,6 +213,7 @@ window.RWS.App = Backbone.Model.extend({
             url: 'http://localhost:8080/docs/',
             success: function (data, textStatus, jqXHR) {
 				$('#index-definition-list').empty();
+				app.allDocuments.reset();
                 _.each(data, function (document) {
 					var metadata = document['@metadata'];
 					var id = metadata['@id'];
