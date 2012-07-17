@@ -19,6 +19,15 @@ window.RWS.Models.IndexDefinition = Backbone.Model.extend({
 });
 
 window.RWS.Models.Document = Backbone.Model.extend({
+	content: function(){},
+	metadata: function(){},
+	id: function(){},
+	
+	initialize: function(data){
+		content = data.content;
+		metadata = data.metadata;
+		id = data.id;
+	}
 });
 /*
 Collections
@@ -101,15 +110,44 @@ window.RWS.Views.AllDocumentsView = Backbone.View.extend({
     },
 	events: {
 		"click .icon-pencil": "showPencilClick",
+		"click .save": "updateDocument",
+		"click .cancel": "cancelUpdate"
 	},
 	showPencilClick: function(){
-		var wholeObject = this._document.toJSON();
-		delete wholeObject['@metadata'];
-		var stringObject = JSON.stringify(wholeObject, null, "\t");
-		var metadata = JSON.stringify(this._document.toJSON()['@metadata'], null, "\t");
-		var jsonObject = {"document": stringObject, "metadata": metadata};
+		var id = this._document['attributes']['id'];
+		var metadata = JSON.stringify(this._document['attributes']['metadata'], null, "\t");
+		var content = JSON.stringify(this._document['attributes']['content'], null, "\t");
+		var jsonObject = {"document": content, "metadata": metadata, "id": id};
 		this.$el.html(ich.documentEditTemplate(jsonObject));
-	}
+	},
+	updateDocument: function(){
+		var checkingObject = this._document.toJSON();
+		delete checkingObject['@metadata'];
+		var updatedDoc = JSON.parse(this.$('#document').val());
+		var updatedMetadata = JSON.parse(this.$('#metadata').val());
+		var update = 	this._document.set({"content": updatedDoc, "metadata":updatedMetadata});
+		var docId = this._document.toJSON()['id'];
+		/*$.ajax({
+            type: 'PUT',
+            dataType: 'jsonp',
+			data: updatedDoc,
+            jsonp: 'jsonp', // “jsonp”, this is needed since jQuery defaults the name of the callback parameter to “callback”. Raven expects this to be “jsonp” hence the override is needed.
+			url: 'http://localhost:8080/docs/' + docId,
+            success: function (data, textStatus, jqXHR) {
+                alert('hoorah!');
+				this.$el.html(ich.documentSummaryTemplate(this._document.toJSON()));
+            },
+            error: function (data, textStatus, error) {
+                alert("fail!")
+            }
+        });*/
+		this.$el.html(ich.documentSummaryTemplate(this._document.toJSON()));
+        //return this;
+	},
+	cancelUpdate: function(){
+		this.$el.html(ich.documentSummaryTemplate(this._document.toJSON()));
+		//return this;
+	},
 });
 
 /*
@@ -155,6 +193,7 @@ window.RWS.App = Backbone.Model.extend({
             jsonp: 'jsonp', // “jsonp”, this is needed since jQuery defaults the name of the callback parameter to “callback”. Raven expects this to be “jsonp” hence the override is needed.
             url: 'http://localhost:8080/indexes/',
             success: function (data, textStatus, jqXHR) {
+				$('#index-definition-list').empty();
                 _.each(data, function (indexDefinition) {
                     app.indexDefinitions.add(indexDefinition);
                 });
@@ -174,8 +213,12 @@ window.RWS.App = Backbone.Model.extend({
             url: 'http://localhost:8080/docs/',
             success: function (data, textStatus, jqXHR) {
 				$('#index-definition-list').empty();
-                _.each(data, function (documents) {
-                    app.allDocuments.add(documents);
+                _.each(data, function (document) {
+					var metadata = document['@metadata'];
+					var id = metadata['@id'];
+					var content = document;
+					delete content['@metadata'];
+                    app.allDocuments.add(new window.RWS.Models.Document({content: content, metadata: metadata, id: id}));
                 });
             },
             error: function (jqXHR, textStatus, errorThrown) {

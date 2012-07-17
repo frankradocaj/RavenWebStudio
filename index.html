@@ -143,17 +143,19 @@
 
 <script id="documentSummaryTemplate" type="text/html">
 	<div class='icon-pencil' style='float:right; padding-left:10px;' title='click here to edit the document'/>
-	{{#@metadata}}
-	<p>Id: {{@id}}</p>
-	<p>Type: {{Raven-Entity-Name}}</p>
-	{{/@metadata}}
+	<p>Id: {{id}}</p>
+	{{#metadata}}
+	<p>Type: {{Raven-Entity-Name}}
+	{{/metadata}}
 </script>
 
 <script id="documentEditTemplate" type="text/html">
-	{{#metadata}}
-	<h3>{{@id}}</h3>
-	{{/metadata}}
+	<!--{{#@metadata}}
+	//<h3>{{@id}}</h3>
+	//{{/@metadata}} -->
 	<form action="#">
+		<p>{{id}}</p>
+		<input type="hidden" name="id" value="{{id}} />
 		<label for="document">Document</label>
 		<!-- HACK: Hacking the width - not sure at this stage which css style to update -->
 		<textarea rows="10" columns="4" id="document" name="document" style="width:95%;">{{document}}</textarea>
