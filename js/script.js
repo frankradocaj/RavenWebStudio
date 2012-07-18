@@ -127,20 +127,21 @@ window.RWS.Views.AllDocumentsView = Backbone.View.extend({
 		var updatedMetadata = JSON.parse(this.$('#metadata').val());
 		var update = 	this._document.set({"content": updatedDoc, "metadata":updatedMetadata});
 		var docId = this._document.toJSON()['id'];
-		/*$.ajax({
+		$.support.cors = true;
+		$.ajax({
             type: 'PUT',
-            dataType: 'jsonp',
-			data: updatedDoc,
-            jsonp: 'jsonp', // “jsonp”, this is needed since jQuery defaults the name of the callback parameter to “callback”. Raven expects this to be “jsonp” hence the override is needed.
+            dataType: 'json',
+			data: JSON.stringify(updatedDoc),
+            //jsonp: 'jsonp', // “jsonp”, this is needed since jQuery defaults the name of the callback parameter to “callback”. Raven expects this to be “jsonp” hence the override is needed.
 			url: 'http://localhost:8080/docs/' + docId,
             success: function (data, textStatus, jqXHR) {
                 alert('hoorah!');
-				this.$el.html(ich.documentSummaryTemplate(this._document.toJSON()));
+				//this.$el.html(ich.documentSummaryTemplate(this._document.toJSON()));
             },
             error: function (data, textStatus, error) {
                 alert("fail!")
             }
-        });*/
+        });
 		this.$el.html(ich.documentSummaryTemplate(this._document.toJSON()));
         //return this;
 	},
