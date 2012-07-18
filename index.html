@@ -128,7 +128,9 @@
   <!-- end scripts -->
 
 <script id="indexSummaryTemplate" type="text/html">
-    <p>Name: {{name}}</p>
+    <div class='icon-search' style='float:right; padding-left:10px;'/>
+	<div class='icon-pencil' style='float:right; padding-left:10px;'/>
+	<p>Name: {{name}}</p>
 	{{#definition}}
 	<p>Temporary: {{IsTemp}}</p>
 	<p>Maps:</p>
@@ -138,6 +140,35 @@
 	{{/definition}}
 </script>
 
+
+<script id="documentSummaryTemplate" type="text/html">
+	<div class='icon-pencil' style='float:right; padding-left:10px;' title='click here to edit the document'/>
+	<p>Id: {{id}}</p>
+	{{#metadata}}
+	<p>Type: {{Raven-Entity-Name}}
+	{{/metadata}}
+</script>
+
+<script id="documentEditTemplate" type="text/html">
+	<!--{{#@metadata}}
+	//<h3>{{@id}}</h3>
+	//{{/@metadata}} -->
+	<form action="#">
+		<p>{{id}}</p>
+		<input type="hidden" name="id" value="{{id}} />
+		<label for="document">Document</label>
+		<!-- HACK: Hacking the width - not sure at this stage which css style to update -->
+		<textarea rows="10" columns="4" id="document" name="document" style="width:95%;">{{document}}</textarea>
+		<label for="metadata">Metadata</label>
+		<!-- HACK: Hacking the width - not sure at this stage which css style to update -->
+		<textarea rows="10" columns="4" id="metadata" name="metadata" style="width:95%;">{{metadata}}</textarea>
+		<br />
+		<button class="save">Save</button>
+		<button class="cancel">Cancel</button>
+	</form>
+	
+	
+</script>
   <!-- Asynchronous Google Analytics snippet. Change UA-XXXXX-X to be your site's ID.
        mathiasbynens.be/notes/async-analytics-snippet -->
   <!--<script>

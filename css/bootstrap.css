@@ -180,9 +180,16 @@ a:hover {
   width: 700px;
 }
 .span8 {
-  width: 620px;
+  width: 620px; 
 }
 .span7 {
+  border-style:solid;
+  border-width:thin;
+  border-color:grey;
+  margin-bottom:10px;
+  padding:10px;
+  box-shadow: 5px 5px 7px #ebebeb;
+  list-style-type:none; 
   width: 540px;
 }
 .span6 {
@@ -193,6 +200,10 @@ a:hover {
 }
 .span4 {
   width: 300px;
+  border-width:thin;
+  border-style:dotted;
+  border-color:black;
+  background-color:#ebebeb;
 }
 .span3 {
   width: 220px;
@@ -1416,6 +1427,9 @@ table .span24 {
 .icon-search {
   background-position: -48px 0;
 }
+.icon-search:hover {
+  opacity: 0.5;
+}
 .icon-envelope {
   background-position: -72px 0;
 }
@@ -1589,6 +1603,9 @@ table .span24 {
 }
 .icon-pencil {
   background-position: 0 -72px;
+}
+.icon-pencil:hover{
+  opacity:0.5;
 }
 .icon-map-marker {
   background-position: -24px -72px;
